@@ -4,7 +4,7 @@
     "href": "index.html#introduction",
     "title": "An Introduction to Computational Neuroscience",
     "section": "Introduction",
-    "text": "Introduction\nHello world!\n\n\n(np.float64(0.03327702789285542), np.float64(0.9898888284222432))"
+    "text": "Introduction\nHello world!\n\n\n(0.03327702789285542, 0.9898888284222432)"
   },
   {
     "objectID": "index.html#plotting-tests",
