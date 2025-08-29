@@ -1,10 +1,10 @@
 project:
-  type: "website"
-  output_dir: "docs"
+  type: website
+  output_dir: docs
 
 format:
   revealjs:
-    theme: "black"
+    theme: black
     slide-number: true
     cold-fold: false
     incrememental: true
