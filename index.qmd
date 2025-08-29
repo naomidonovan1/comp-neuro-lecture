@@ -7,8 +7,18 @@ format: revealjs
 
 Hello world! 
 
-'''{python}
+```{pyodide-python}
 import numpy as np
 np.random.seed(5)
 x = np.random.randn(1000)
 x.mean(), x.std()
+
+## Plotting tests
+```{pyodide-python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 6*np.pi, 400)
+plt.plot(x, np.sin(x))
+plt.title("Toy oscillation")
+plt.show()

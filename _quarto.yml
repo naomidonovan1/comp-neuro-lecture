@@ -11,3 +11,7 @@ format:
   
 execute:
   freeze: auto
+
+# Enable the Pyodide filter for client-side Python execution (real-time)
+filters:
+  - pyodide
