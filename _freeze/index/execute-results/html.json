@@ -1,0 +1,12 @@
+{
+  "hash": "7e2390083a85ec800406947a695f6b80",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"An Introduction to Computational Neuroscience\"\nformat: revealjs\n---\n\n## Introduction\n\nHello world! \n\n::: {#38cacf13 .cell execution_count=1}\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\n(np.float64(0.03327702789285542), np.float64(0.9898888284222432))\n```\n:::\n:::\n\n\n## Plotting tests\n\n::: {#ae0a2a28 .cell execution_count=2}\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-revealjs/cell-3-output-1.png){width=813 height=431}\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

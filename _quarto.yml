@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+  - lecture.ipynb
 
 format:
   revealjs:
@@ -11,7 +13,3 @@ format:
   
 execute:
   freeze: auto
-
-# Enable the Pyodide filter for client-side Python execution (real-time)
-filters:
-  - pyodide

@@ -4,6 +4,13 @@
     "href": "index.html#introduction",
     "title": "An Introduction to Computational Neuroscience",
     "section": "Introduction",
-    "text": "Introduction\nHello world!\n’’’{python} import numpy as np np.random.seed(5) x = np.random.randn(1000) x.mean(), x.std()"
+    "text": "Introduction\nHello world!\n\n\n(np.float64(0.03327702789285542), np.float64(0.9898888284222432))"
+  },
+  {
+    "objectID": "index.html#plotting-tests",
+    "href": "index.html#plotting-tests",
+    "title": "An Introduction to Computational Neuroscience",
+    "section": "Plotting tests",
+    "text": "Plotting tests"
   }
 ]
