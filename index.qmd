@@ -1,6 +1,7 @@
 ---
 title: "An Introduction to Computational Neuroscience"
 format: revealjs
+---
 
 ## Introduction
 
