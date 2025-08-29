@@ -6,7 +6,7 @@ Clone the repo:
 ```bash
 git clone https://github.com/naomidonovan1/comp-neuro-lecture.git
 cd comp-neuro-lecture
-python3 -m venv comp-neuro-venv 
+python3.10 -m venv comp-neuro-venv 
 source comp-neuro-venv/bin/activate
 pip install -r requirements.txt
 ```
