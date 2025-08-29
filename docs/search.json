@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "An Introduction to Computational Neuroscience",
+    "section": "Introduction",
+    "text": "Introduction\nHello world!\n’’’{python} import numpy as np np.random.seed(5) x = np.random.randn(1000) x.mean(), x.std()"
+  }
+]
