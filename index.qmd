@@ -1,0 +1,13 @@
+---
+title: "An Introduction to Computational Neuroscience"
+format: revealjs
+
+## Introduction
+
+Hello world! 
+
+'''{python}
+import numpy as np
+np.random.seed(5)
+x = np.random.randn(1000)
+x.mean(), x.std()
