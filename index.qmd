@@ -8,45 +8,56 @@ format: revealjs
 
 ## 
 | generally, the goal of neuroscience is to understand the nervous system...
-|       --> how it develops
-|       --> what its components are 
-|       --> how all of those components work together
-|       --> how it produces behavior 
-|       etc. 
+::: {.incremental}
+- how it develops
+- what its components are 
+- how all of those components work together
+- how it produces behavior 
+- etc. 
+::: 
 
 ## 
-| generally, the goal of neuroscience is to understand the nervous system...
-|       --> how it develops
-|       --> what its components are 
-|       --> how all of those components work together
-|       --> how it produces behavior 
-|       etc. 
+| generally, the goal of neuroscience is to understand the nervous system... 
 | 
-| we think of some hypothesis, perform some experiments, collect some data... 
+| So, we think of some hypothesis, perform some experiments, collect some data... 
 
 ## 
-| generally, the goal of neuroscience is to understand the nervous system...
-|       --> how it develops
-|       --> what its components are 
-|       --> how all of those components work together
-|       --> how it produces behavior 
-|       etc. 
+| generally, the goal of neuroscience is to understand the nervous system... 
 | 
-| we think of some hypothesis, perform some experiments, collect some data... 
+| So, we think of some hypothesis, perform some experiments, collect some data... 
 | 
-| and then build or use a model to understand how that data supports (or disproves) our hypothesis
+| and then figure out how that data supports (or disproves) our hypothesis
+
+## 
+| generally, the goal of neuroscience is to understand the nervous system... 
+| 
+| So, we think of some hypothesis, perform some experiments, collect some data... 
+| 
+| **and then figure out how that data supports (or disproves) our hypothesis**
+|
+| *so, how do we do this last step?* 
+
+## 
+#### we hope by the end of this lesson, you should all feel comfortable
+::: {.incremental}
+- visualizing data
+- analyzing data
+- and modeling data
+:::
 
 ##
-### essentially, once we have some data... 
-###     what do we do with it?
-
-## 
-#### today, our goal is to help answer that question
-
-##
-### Agenda
+### Agenda 
+::: {.incremental}
 - ~~what is computational neuroscience?~~
 - some coding basics
 - demo: time-series data (systems-focus)
 - demo: single-cell genomics data (molecular-focus)
 - some extra topics we think are fun 
+:::
+
+## 
+::: {style="text-align: center;"} 
+any questions before we get started?
+:::
+
+## 
