@@ -8,7 +8,7 @@ project:
 
 format:
   revealjs:
-    theme: black
+    theme: simple #dracula or night or simple
     slide-number: true
     cold-fold: false
     incrememental: true

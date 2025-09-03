@@ -1,26 +1,52 @@
 ---
-title: "An Introduction to Computational Neuroscience"
+title: "Introduction to Computational Neuroscience"
 format: revealjs
 ---
 
-## Introduction
+### What is computational neuroscience? 
+![adapted from: https://compneuro.neuromatch.io/tutorials/intro.html](./images/ConceptMap.png)
 
-Hello world! 
+## 
+| generally, the goal of neuroscience is to understand the nervous system...
+|       --> how it develops
+|       --> what its components are 
+|       --> how all of those components work together
+|       --> how it produces behavior 
+|       etc. 
 
-```{python}
-import numpy as np
-np.random.seed(5)
-x = np.random.randn(1000)
-x.mean(), x.std()
-```
+## 
+| generally, the goal of neuroscience is to understand the nervous system...
+|       --> how it develops
+|       --> what its components are 
+|       --> how all of those components work together
+|       --> how it produces behavior 
+|       etc. 
+| 
+| we think of some hypothesis, perform some experiments, collect some data... 
 
-## Plotting tests
-```{python}
-import numpy as np
-import matplotlib.pyplot as plt
+## 
+| generally, the goal of neuroscience is to understand the nervous system...
+|       --> how it develops
+|       --> what its components are 
+|       --> how all of those components work together
+|       --> how it produces behavior 
+|       etc. 
+| 
+| we think of some hypothesis, perform some experiments, collect some data... 
+| 
+| and then build or use a model to understand how that data supports (or disproves) our hypothesis
 
-x = np.linspace(0, 6*np.pi, 400)
-plt.plot(x, np.sin(x))
-plt.title("Toy oscillation")
-plt.show()
-```
+##
+### essentially, once we have some data... 
+###     what do we do with it?
+
+## 
+#### today, our goal is to help answer that question
+
+##
+### Agenda
+- ~~what is computational neuroscience?~~
+- some coding basics
+- demo: time-series data (systems-focus)
+- demo: single-cell genomics data (molecular-focus)
+- some extra topics we think are fun 
