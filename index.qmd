@@ -151,6 +151,68 @@ this gives the group writing permissions for the file file_name
 
 | **this is important to know when working with others on a shared computer or manipulating shared data**
 
+
+## BASH: File Viewing Commands
+| 
+| 
+
+```bash
+$ cd ~/code/comp-neuro-lecture
+$ head -n 5 index.qmd     # first 5 lines
+$ tail -n 5 index.qmd     # last 5 lines
+$ wc -l index.qmd         # line count (quick sanity check)
+$ cat index.qmd           # view the entire file
+$ less index.qmd          # open a scrollable viewer (q to quit)
+```
+
+
+## BASH: File/Dir Manipulation Commands
+| 
+| 
+
+```bash
+$ cd ~/code/comp-neuro-lecture
+$ mkdir TEST_FOLDER            # make a folder
+$ touch FAKE_FILE.txt          # empty file
+$ cp requirements.txt TEST_FOLDER/   # copy
+$ mv FAKE_FILE.txt TEST_FOLDER/    # move/rename
+$ rm TEST_FOLDER/FAKE_FILE.txt     # remove file (no trash!)
+$ rm -r TEST_FOLDER            # remove a folder recursively
+```
+
+| 
+| **NOTE:** `rm` is permanent. Prefer `trash` (macOS) or `gio trash` (Linux) if available.
+
+
+## BASH Commands: *, Search, and Pipes
+| 
+| 
+```bash
+$ cd ~home/code/comp-neuro-lecture
+$ ls *.csv                     # match any files that end w/ .csv
+$ grep 42 spikes.csv           # search text
+$ grep 42 spikes.csv | wc -l   # chain commands with a pipe
+```
+
+
+## Running programs
+
+```bash
+$ python3 analysis.py         # run a Python script
+$ Rscript analyze.R           # run an R script
+```
+
+## Any questions about BASH commands? 
+
+## Why Git/GitHub? (1 min)
+
+* **Git** = version control (time machine for code/data text).
+* **GitHub** = place to host & collaborate (issues, PRs, CI).
+* Track changes, roll back, and work together without chaos.
+
+---
+
+
 ##
 * Confirm Git:
 
@@ -162,103 +224,6 @@ $ git --version
 **Tip:** If Git isn’t found, install from [https://git-scm.com/downloads](https://git-scm.com/downloads) (Git Bash included on Windows).
 Mac users can also: `xcode-select --install`.
 \:::
-
----
-
-## Navigation: where am I? (3 min)
-
-```bash
-$ pwd          # print working directory
-$ ls           # list files
-$ ls -lh       # long, human‑readable sizes
-$ cd Desktop   # move into a folder
-$ cd ..        # go up one level
-$ cd ~         # go home
-```
-
-**Follow‑along:**
-
-1. `pwd`
-2. `cd` to a folder you know (e.g., `Documents`)
-3. `ls -lh`
-
-\::: callout-note
-**Concepts:** *path*, *relative vs absolute paths*, *home (\~)*, *parent (..)*
-\:::
-
----
-
-## Peek at data (3 min)
-
-```bash
-$ head -n 5 spikes.csv     # first 5 lines
-$ tail -n 5 spikes.csv     # last 5 lines
-$ wc -l spikes.csv         # line count (quick sanity check)
-$ less spikes.csv          # open a scrollable viewer (q to quit)
-```
-
-**Follow‑along:** If you don’t have a CSV handy, create a tiny one:
-
-```bash
-$ printf "t,neuron\n0.001,42\n0.003,42\n0.004,7\n" > spikes.csv
-$ head spikes.csv
-```
-
----
-
-## Make, copy, move, remove (3 min)
-
-```bash
-$ mkdir results            # make a folder
-$ touch notes.txt          # empty file
-$ cp spikes.csv results/   # copy
-$ mv notes.txt results/    # move/rename
-$ rm results/notes.txt     # remove file (no trash!)
-$ rm -r results            # remove a folder recursively
-```
-
-\::: callout-warning
-**Careful:** `rm` is permanent. Prefer `trash` (macOS) or `gio trash` (Linux) if available.
-\:::
-
----
-
-## Pipes & wildcards (2 min)
-
-```bash
-$ cat spikes.csv | head -n 2   # chain commands with a pipe
-$ ls *.csv                     # match many files
-$ grep 42 spikes.csv           # search text
-```
-
-**Follow‑along mini:** Count lines containing `42`:
-
-```bash
-$ grep -c 42 spikes.csv
-```
-
----
-
-## Running programs (1 min)
-
-```bash
-$ python3 analysis.py         # run a Python script
-$ Rscript analyze.R           # run an R script
-```
-
-\::: callout-tip
-**Hint:** Use `tab` to auto‑complete paths & command names.
-\:::
-
----
-
-## Why Git/GitHub? (1 min)
-
-* **Git** = version control (time machine for code/data text).
-* **GitHub** = place to host & collaborate (issues, PRs, CI).
-* Track changes, roll back, and work together without chaos.
-
----
 
 ## One‑time Git setup (1 min)
 
