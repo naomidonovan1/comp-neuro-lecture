@@ -49,7 +49,7 @@ format: revealjs
 ### Agenda 
 ::: {.incremental}
 - ~~what is computational neuroscience?~~
-- some coding basics
+- some coding tools 
 - demo: time-series data (systems-focus)
 - demo: single-cell genomics data (molecular-focus)
 - some extra topics we think are fun 
@@ -60,4 +60,427 @@ format: revealjs
 any questions before we get started?
 :::
 
+## Some coding tools
+
+> 1. BASH basics
+> 2. Git/GitHub basics
+
+## Some coding tools
+
+1. BASH basics
+2. Git/GitHub basics
+
+By the end of this, you'll hopefully know how to navigate data folders and publish your first repo.
+
+
+---
+
+## BASH Setup
+
+* **Mac / Linux:** Use **Terminal**.
+* **Windows:** Use **Windows Terminal** with **WSL** *or* **Git Bash** (installed via Git for Windows).
+
+## What is BASH?
+| BASH = 'Bourne-Again SHell' 
+* it's a commonly-used command-line shell 
+* BASH can interpret commands entered into the terminal window, execute programs, navigate the file system, and manipulate files/directories.
+* allows you to "talk" to any Unix-like computer and pairs well with Python/R, Conda, and Git. 
+
+## What is a BASH command? 
+* a command is just a program you run by typing its name
+* general structure
+```bash
+command [options] [argument]
+```
+
+* command = the tool
+* options = tweak the behavior of the tool
+* arguments = what the tool acts on
+
+## BASH: Navigation Commands
+| 
+| 
+
+```bash
+$ pwd          # print working directory
+$ cd Desktop   # change directory to the Desktop folder
+$ cd ..        # go back one level
+$ cd ~         # go to home directory 
+$ clear        # clear the terminal window 
+```
+
 ## 
+#### what is the difference between an 'absolute' and 'relative' path? 
+
+* absolute = the entire pathway to a file or directory starting from the root of the file system
+* relative = the pathway to a file or directory starting from the folder you are currently in
+
+| **this is important to remember whenever importing data from a folder** 
+
+## BASH: Navigation Commands
+| 
+| 
+
+```bash
+$ cd Desktop/Abbasi\ Lab/   # move into Abbasi Lab folder 
+$ ls                        # list the contents of the folder
+$ ls -l                     # list (long) the contents of the folder
+```
+
+## 
+#### what does the string (e.g. -rw-r--r--@) in front of the file mean? 
+
+* the first character signifies the file is a regular file (-), a directory (d), or something else 
+* the next 9 characters can be grouped into sets of three (owner, group, others)
+    * 'r' means read (view contents of the file/directory) 
+    * 'w' means write (modify/delete the file/directory contents)
+    * 'x' means execute (execute the contents of the file, i.e. run a Python script, or cd into that directory) 
+* the '@' at the end means there's some more file attributes
+
+## 
+#### what does the string (e.g. -rw-r--r--@) in front of the file mean? 
+* can change permissions with:
+```bash
+chmod [who][+/-][permission] file_or_dir
+```
+* for example:
+```bash
+chmod g+w file_name
+```
+this gives the group writing permissions for the file file_name
+
+| **this is important to know when working with others on a shared computer or manipulating shared data**
+
+##
+* Confirm Git:
+
+```bash
+$ git --version
+```
+
+\::: callout-tip
+**Tip:** If Git isn’t found, install from [https://git-scm.com/downloads](https://git-scm.com/downloads) (Git Bash included on Windows).
+Mac users can also: `xcode-select --install`.
+\:::
+
+---
+
+## Navigation: where am I? (3 min)
+
+```bash
+$ pwd          # print working directory
+$ ls           # list files
+$ ls -lh       # long, human‑readable sizes
+$ cd Desktop   # move into a folder
+$ cd ..        # go up one level
+$ cd ~         # go home
+```
+
+**Follow‑along:**
+
+1. `pwd`
+2. `cd` to a folder you know (e.g., `Documents`)
+3. `ls -lh`
+
+\::: callout-note
+**Concepts:** *path*, *relative vs absolute paths*, *home (\~)*, *parent (..)*
+\:::
+
+---
+
+## Peek at data (3 min)
+
+```bash
+$ head -n 5 spikes.csv     # first 5 lines
+$ tail -n 5 spikes.csv     # last 5 lines
+$ wc -l spikes.csv         # line count (quick sanity check)
+$ less spikes.csv          # open a scrollable viewer (q to quit)
+```
+
+**Follow‑along:** If you don’t have a CSV handy, create a tiny one:
+
+```bash
+$ printf "t,neuron\n0.001,42\n0.003,42\n0.004,7\n" > spikes.csv
+$ head spikes.csv
+```
+
+---
+
+## Make, copy, move, remove (3 min)
+
+```bash
+$ mkdir results            # make a folder
+$ touch notes.txt          # empty file
+$ cp spikes.csv results/   # copy
+$ mv notes.txt results/    # move/rename
+$ rm results/notes.txt     # remove file (no trash!)
+$ rm -r results            # remove a folder recursively
+```
+
+\::: callout-warning
+**Careful:** `rm` is permanent. Prefer `trash` (macOS) or `gio trash` (Linux) if available.
+\:::
+
+---
+
+## Pipes & wildcards (2 min)
+
+```bash
+$ cat spikes.csv | head -n 2   # chain commands with a pipe
+$ ls *.csv                     # match many files
+$ grep 42 spikes.csv           # search text
+```
+
+**Follow‑along mini:** Count lines containing `42`:
+
+```bash
+$ grep -c 42 spikes.csv
+```
+
+---
+
+## Running programs (1 min)
+
+```bash
+$ python3 analysis.py         # run a Python script
+$ Rscript analyze.R           # run an R script
+```
+
+\::: callout-tip
+**Hint:** Use `tab` to auto‑complete paths & command names.
+\:::
+
+---
+
+## Why Git/GitHub? (1 min)
+
+* **Git** = version control (time machine for code/data text).
+* **GitHub** = place to host & collaborate (issues, PRs, CI).
+* Track changes, roll back, and work together without chaos.
+
+---
+
+## One‑time Git setup (1 min)
+
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email "you@ucsf.edu"
+$ git config --global init.defaultBranch main
+```
+
+Optional, SSH (recommended later):
+
+```bash
+$ ssh-keygen -t ed25519 -C "you@ucsf.edu"
+$ cat ~/.ssh/id_ed25519.pub   # add this key in GitHub → Settings → SSH keys
+```
+
+---
+
+## Create your first repo (new) (3 min)
+
+**Option A: Start local, then push**
+
+```bash
+$ mkdir neuro-tools-demo && cd neuro-tools-demo
+$ git init
+$ echo "# Neuro Tools Demo" > README.md
+$ git add README.md
+$ git commit -m "init: add README"
+```
+
+Now create an empty repo on GitHub (web UI) named **neuro-tools-demo**, then connect:
+
+```bash
+$ git branch -M main
+$ git remote add origin https://github.com/<your-username>/neuro-tools-demo.git
+$ git push -u origin main
+```
+
+**Option B: Start from GitHub, then clone**
+
+```bash
+$ git clone https://github.com/<your-username>/neuro-tools-demo.git
+$ cd neuro-tools-demo
+```
+
+---
+
+## The 3‑step loop you’ll use 99% of the time (3 min)
+
+1. **Edit files** (VS Code, etc.)
+2. **Stage changes** → `git add <files>`
+3. **Commit** → `git commit -m "feat: explanation of what changed"`
+4. **Sync** → `git pull --rebase` (update) then `git push` (publish)
+
+```bash
+$ echo "t,neuron\n0.001,42" > spikes.csv
+$ git add spikes.csv
+$ git commit -m "data: add toy spikes csv"
+$ git pull --rebase
+$ git push
+```
+
+\::: callout-tip
+**Commit messages:** use present‑tense verbs + short scope, e.g., `fix:`, `feat:`, `docs:`, `refactor:`
+\:::
+
+---
+
+## `.gitignore` (1 min)
+
+Tell Git what **not** to track (caches, large data, secrets):
+
+```bash
+$ printf "__pycache__/\n.DS_Store\n*.ipynb_checkpoints\n*.log\n.env\nresults/\n" > .gitignore
+$ git add .gitignore
+$ git commit -m "chore: add gitignore"
+$ git push
+```
+
+Use [https://gitignore.io](https://gitignore.io) for templates.
+
+---
+
+## Branches & Pull Requests (2 min)
+
+Work safely on a feature branch, then open a PR on GitHub.
+
+```bash
+$ git checkout -b feature/readme
+$ echo "Added learning goals" >> README.md
+$ git add README.md
+$ git commit -m "docs: add learning goals"
+$ git push -u origin feature/readme
+```
+
+Now, on GitHub: **Open Pull Request → Add reviewer → Merge**.
+
+\::: callout-note
+**Concepts:** main branch = stable; feature branches = safe sandboxes.
+\:::
+
+---
+
+## Basic collaboration workflow (2 min)
+
+1. Sync first: `git pull --rebase`
+2. Create a branch: `git checkout -b fix/typo`
+3. Change → add → commit → push
+4. Open a PR → reviewer comments → update → merge
+
+**Resolve simple conflicts:**
+
+* Git shows `<<<<<<<` and `>>>>>>>` markers in files.
+* Keep the correct bits, delete markers, then:
+
+```bash
+$ git add <fixed-file>
+$ git rebase --continue   # if rebasing
+$ git commit              # or make a new commit
+$ git push
+```
+
+---
+
+## HTTPS vs SSH (1 min)
+
+* **HTTPS**: simplest (may need a Personal Access Token when pushing).
+* **SSH**: one‑time key setup, then passwordless pushes.
+
+**If HTTPS asks for login:** Create a **Classic Token** on GitHub → copy once → use as password in the push dialog.
+
+---
+
+## Quick glossary (1 min)
+
+* **Repo**: a project folder tracked by Git.
+* **Commit**: a snapshot of changes with a message.
+* **Remote**: where your repo lives online (e.g., GitHub `origin`).
+* **Branch**: a movable pointer for work streams.
+* **PR**: request to merge your branch into `main`.
+
+---
+
+## Close‑out challenge (2 min)
+
+**You do it:**
+
+1. Make a folder `my_experiment/` and a file `spikes.csv` with 3 lines.
+2. Create a repo, add, commit, push to GitHub.
+3. Open a PR that edits `README.md` (add a one‑line description).
+
+**Stretch:** Add a `.gitignore` that ignores `results/` and `*.log`.
+
+---
+
+## Cheat sheet (copy/paste)
+
+```bash
+# BASH nav
+pwd; ls -lh; cd ..; cd ~
+head -n 5 file; tail -n 5 file; less file; wc -l file
+mkdir dir; touch file; cp a b; mv a b; rm file; rm -r dir
+
+# Git config
+git config --global user.name "Your Name"
+git config --global user.email "you@ucsf.edu"
+
+# New repo (local → GitHub)
+mkdir demo && cd demo && git init
+echo "# demo" > README.md
+git add README.md && git commit -m "init"
+# create empty repo on GitHub first, then:
+git branch -M main
+git remote add origin https://github.com/<you>/demo.git
+git push -u origin main
+
+# Daily loop
+git status
+git add <files>
+git commit -m "message"
+git pull --rebase
+git push
+
+# Branch + PR
+git checkout -b feature/name
+git push -u origin feature/name
+```
+
+---
+
+## Where to learn next
+
+* Software Carpentry: Shell & Git
+* Neuromatch Comp Neuro Tutorials (tools + modeling)
+* Atlassian Git Tutorials
+* Pro tip: keep a personal **snippets.md** with your favorite commands.
+
+\::: callout-tip
+**Final advice:** Commit early, commit often, and write messages your future self will understand.
+\:::
+
+
+## extra slides
+
+## Check what 'shell' you're using
+| The 'shell' is the program that the computer uses to provide a user interface to an operating system
+
+To check: 
+```bash
+$ echo $SHELL
+```
+
+## Check what 'shell' you're using
+| The 'shell' is the program that the computer uses to provide a user interface to an operating system
+
+To check: 
+```bash
+$ echo $SHELL
+```
+|
+| echo $SHELL prints out the full path to the shell program your terminal is currently using.
+| For example:
+* On macOS you might see: /bin/zsh or /bin/bash
+* On Linux: /bin/bash, /usr/bin/fish, etc.
+* On Windows with Git Bash: something like /usr/bin/bash
