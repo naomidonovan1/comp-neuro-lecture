@@ -1,26 +1,347 @@
 ---
-title: "An Introduction to Computational Neuroscience"
+title: "Introduction to Computational Neuroscience"
 format: revealjs
 ---
 
-## Introduction
+### What is computational neuroscience? 
+![adapted from: https://compneuro.neuromatch.io/tutorials/intro.html](./images/ConceptMap.png)
 
-Hello world! 
+## 
+| generally, the goal of neuroscience is to understand the nervous system...
+::: {.incremental}
+- how it develops
+- what its components are 
+- how all of those components work together
+- how it produces behavior 
+- what happens in a diseased nervous system 
+- etc. 
+::: 
 
-```{python}
-import numpy as np
-np.random.seed(5)
-x = np.random.randn(1000)
-x.mean(), x.std()
+## 
+| generally, the goal of neuroscience is to understand the nervous system... 
+| 
+| So, we think of some hypothesis, perform some experiments, collect some data... 
+
+## 
+| generally, the goal of neuroscience is to understand the nervous system... 
+| 
+| So, we think of some hypothesis, perform some experiments, collect some data... 
+| 
+| and then figure out how that data supports (or disproves) our hypothesis
+
+## 
+| generally, the goal of neuroscience is to understand the nervous system... 
+| 
+| So, we think of some hypothesis, perform some experiments, collect some data... 
+| 
+| **and then figure out how that data supports (or disproves) our hypothesis**
+|
+| *so, how do we do this last step?* 
+
+## 
+#### we hope by the end of this lesson, you should all feel comfortable
+::: {.incremental}
+- visualizing data
+- analyzing data
+- and modeling data
+:::
+
+##
+### Agenda 
+::: {.incremental}
+- ~~what is computational neuroscience?~~
+- some coding tools 
+- demo: time-series data (systems-focus)
+- demo: single-cell genomics data (molecular-focus)
+:::
+
+## 
+::: {style="text-align: center;"} 
+any questions before we get started?
+:::
+
+## Some coding tools
+
+> 1. BASH basics
+> 2. Git/GitHub basics
+
+## Some coding tools
+
+1. BASH basics
+2. Git/GitHub basics
+
+By the end of this, you'll hopefully know how to navigate data folders and publish your first repo.
+
+
+---
+
+## BASH Setup
+
+* **Mac / Linux:** Use **Terminal**.
+* **Windows:** Use **Windows Terminal** with **WSL** *or* **Git Bash** (installed via Git for Windows).
+
+## What is BASH?
+| BASH = 'Bourne-Again SHell' 
+* it's a commonly-used command-line shell 
+* BASH can interpret commands entered into the terminal window, execute programs, navigate the file system, and manipulate files/directories.
+* allows you to "talk" to any Unix-like computer and pairs well with Python/R, Conda, and Git. 
+
+## What is a BASH command? 
+* a command is just a program you run by typing its name
+* general structure
+```bash
+command [options] [argument]
 ```
 
-## Plotting tests
-```{python}
-import numpy as np
-import matplotlib.pyplot as plt
+* command = the tool
+* options = tweak the behavior of the tool
+* arguments = what the tool acts on
 
-x = np.linspace(0, 6*np.pi, 400)
-plt.plot(x, np.sin(x))
-plt.title("Toy oscillation")
-plt.show()
+## BASH: Navigation Commands
+| 
+| 
+
+```bash
+$ pwd          # print working directory
+$ cd Desktop   # change directory to the Desktop folder
+$ cd ..        # go back one level
+$ cd ~         # go to home directory 
+$ clear        # clear the terminal window 
+```
+
+## 
+#### what is the difference between an 'absolute' and 'relative' path? 
+
+:::{.incremental}
+* absolute = the entire pathway to a file or directory starting from the root of the file system
+* relative = the pathway to a file or directory starting from the folder you are currently in
+* Absolute or relative? 
+:::
+::: {.fragment}
+```bash
+$ cd /Users/naomidonovan/Desktop
+$ cd Desktop
+$ cd ./Desktop
+$ cd ../../Users/naomidonovan/Desktop
+```
+:::
+::: {.incremental}
+* absolute paths start with a / and relative paths don't
+:::
+::: {.fragment}
+**important to remember when importing data** 
+:::
+
+## BASH: Navigation Commands
+| 
+| 
+
+```bash
+$ cd Desktop/Abbasi\ Lab/   # move into Abbasi Lab folder 
+$ ls                        # list the contents of the folder
+$ ls -l                     # list (long) the contents of the folder
+```
+
+
+## BASH: File Viewing Commands
+| 
+| 
+
+```bash
+$ cd ~/code/comp-neuro-lecture
+$ head -n 5 index.qmd     # first 5 lines
+$ tail -n 5 index.qmd     # last 5 lines
+$ wc -l index.qmd         # line count (quick sanity check)
+$ cat index.qmd           # view the entire file
+$ less index.qmd          # open a scrollable viewer (q to quit)
+$ nano index.qmd          # open file and edit right in the terminal
+```
+
+## BASH: File/Dir Manipulation Commands
+| 
+| 
+
+```bash
+$ cd ~/code/comp-neuro-lecture
+$ mkdir TEST_FOLDER            # make a folder
+$ touch FAKE_FILE.txt          # empty file
+$ cp requirements.txt TEST_FOLDER/   # copy
+$ mv FAKE_FILE.txt TEST_FOLDER/    # move/rename
+$ rm TEST_FOLDER/FAKE_FILE.txt     # remove file (no trash!)
+$ rm -r TEST_FOLDER            # remove a folder recursively
+```
+
+| 
+| **NOTE:** `rm` is permanent. Prefer `trash` (macOS) or `gio trash` (Linux) if available.
+
+
+## Running programs
+| 
+| 
+
+```bash
+$ python3 analysis.py         # run a Python script
+$ Rscript analyze.R           # run an R script
+```
+
+## Any questions about BASH commands? 
+
+## Git / GitHub
+
+* **Git** = version control (time machine for code/data text).
+* **GitHub** = place to host & collaborate (issues, PRs, CI).
+* Track changes, roll back, and work together without chaos.
+
+
+## Check if you have Git
+|
+| 
+::: {.fragment}
+```bash
+$ git --version
+```
+::: 
+
+::: {.fragment}
+| 
+| If you don't see git, follow instructions here: https://docs.github.com/en/get-started/git-basics/set-up-git 
+::: 
+
+## Follow these steps to setup Git
+![](./images/git_setup.png)
+
+## Some Git basics and terminology
+::: {.incremental}
+* **Repository (repo):** A project folder tracked by Git
+* **Commit:** A screenshot of changes
+* **Branch:** A parallel version of your project; make changes without messing up the main version
+* **Merge:** Combine changes from one branch into another
+* **Remote:** An online copy of your repo (e.g. on Github)
+* **Clone:** Download a repo to your computer 
+* **Push/Pull:** Sync your local repo (on computer) with the remote (on Github)
+    * push = upload ; pull = download
+:::
+
+## Sample Git graph
+![](./images/git_graph.png)
+
+
+## Create your first repo
+![](./images/create_repo.png)
+
+## Cloning the repo to work on it locally
+| 
+| 
+```bash
+$ git clone https://github.com/<your-username>/neuro-tools-demo.git
+$ cd neuro-tools-demo
+```
+
+## The 4-step loop you'll use 99% of the time
+
+::: {.incremental}
+1. **Edit files** (VS Code, etc.)
+2. **Stage changes** → `git add <files>`
+3. **Commit** → `git commit -m "feat: explanation of what changed"`
+4. **Sync** → `git push` (publish)
+:::
+
+::: {.fragment}
+if working with someone else on the same remote branch, make sure to sync their edits before you push yours
+::: 
+
+::: {.fragment}
+```bash
+$ git pull --rebase
+```
+::: 
+
+## the whole process
+::: {.fragment}
+```bash
+$ nano FAKE_FILE.txt
+$ git add FAKE_FILE.txt
+$ git commit -m "new file made"
+$ git push
+```
+:::
+
+::: {.fragment}
+to double check things as you're going... 
+```bash
+$ git status
+```
+::: 
+
+##
+##
+
+## extra slides
+
+## Check what 'shell' you're using
+| The 'shell' is the program that the computer uses to provide a user interface to an operating system
+
+To check: 
+```bash
+$ echo $SHELL
+```
+
+## Check what 'shell' you're using
+| The 'shell' is the program that the computer uses to provide a user interface to an operating system
+
+To check: 
+```bash
+$ echo $SHELL
+```
+|
+| echo $SHELL prints out the full path to the shell program your terminal is currently using.
+| For example:
+* On macOS you might see: /bin/zsh or /bin/bash
+* On Linux: /bin/bash, /usr/bin/fish, etc.
+* On Windows with Git Bash: something like /usr/bin/bash
+
+
+## 
+#### what does the string (e.g. -rw-r--r--@) in front of the file mean? 
+
+::: {.incremental}
+* the first character signifies the file is a regular file (-), a directory (d), or something else 
+* the next 9 characters can be grouped into sets of three (owner, group, others)
+    * 'r' means read (view contents of the file/directory) 
+    * 'w' means write (modify/delete the file/directory contents)
+    * 'x' means execute (execute the contents of the file, i.e. run a Python script, or cd into that directory) 
+* the '@' at the end means there's some more file attributes
+::: 
+
+## 
+#### what does the string (e.g. -rw-r--r--@) in front of the file mean? 
+::: {.incremental}
+* can change permissions with:
+::: 
+::: {.fragment}
+```bash
+chmod [who][+/-][permission] file_or_dir
+```
+:::
+::: {.incremental}
+* for example, this gives the group writing permissions for the file file_name
+::: 
+::: {.fragment}
+```bash
+chmod g+w file_name
+```
+::: 
+::: {.fragment}
+**important to know when working with others on a shared computer or manipulating shared data**
+::: 
+
+
+## BASH Commands: *, Search, and Pipes
+| 
+| 
+```bash
+$ cd ~home/code/comp-neuro-lecture
+$ ls *.csv                     # match any files that end w/ .csv
+$ grep 42 spikes.csv           # search text
+$ grep 42 spikes.csv | wc -l   # chain commands with a pipe
 ```
