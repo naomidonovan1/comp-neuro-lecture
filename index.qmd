@@ -309,6 +309,37 @@ $ git status
 ```
 ::: 
 
+## Working with Branches in Git
+
+::: {.incremental}
+* **Branch** = a parallel version of your project
+* Lets you try new ideas without breaking `main`
+* Common use: feature development, bug fixes, experiments
+:::
+
+---
+
+## Git Branch Basics
+
+::: {.fragment}
+```bash
+# create a new branch
+$ git branch new-feature
+
+# switch to that branch
+$ git checkout new-feature
+
+# create AND switch in one step
+$ git checkout -b new-feature
+
+# list all branches
+$ git branch
+
+# switch back to main
+$ git checkout main
+```
+:::
+
 ##
 ##
 
