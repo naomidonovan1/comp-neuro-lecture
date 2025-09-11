@@ -52,14 +52,12 @@ format: revealjs
 ::: {.incremental}
 - ~~what is computational neuroscience?~~
 - some coding tools 
-- demo: time-series data (systems-focus)
-- demo: single-cell genomics data (molecular-focus)
+- demo: **time-series data** (<i>systems-focus</i>)
+- demo: **single-cell genomics data** (<i>molecular-focus</i>)
 :::
 
-## 
-::: {style="text-align: center;"} 
-any questions before we get started?
-:::
+# Any questions before we get started?
+
 
 ## Some coding tools
 
@@ -73,7 +71,7 @@ any questions before we get started?
 2. Git/GitHub basics
 3. HPC basics
 
-By the end of this, you'll hopefully know more about navigating data folders, publishing repositories, and utilizing UCSF's computational resources.
+By the end of this section, you'll hopefully know more about **navigating data folders**, **publishing repositories**, and **utilizing UCSF's computational resources**.
 
 
 ---
