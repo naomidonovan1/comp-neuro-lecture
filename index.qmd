@@ -1,5 +1,6 @@
 ---
-title: "Introduction to Computational Neuroscience"
+title: "Topics in Computational Neuroscience"
+subtitle: "**Naomi** — Abbasi Lab (3rd Year)<br>**David** — Corces Lab (2nd Year)"
 format: revealjs
 ---
 
@@ -363,7 +364,7 @@ $ git checkout main
 ## <u>Wynton</u>: UCSF's premier(-ish) HPC
 ![](./images/wynton.png)
 
-## Wynton HPC: Node Types
+## <u>Wynton</u>: Node Types
 
 ::: {.incremental}
 * **Login (log):** entry point, SSH access, file mgmt (no software/tools)
