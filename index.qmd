@@ -74,7 +74,7 @@ format: revealjs
 By the end of this section, you'll hopefully know more about **navigating data folders**, **publishing repositories**, and **utilizing UCSF's computational resources**.
 
 
----
+# BASH basics
 
 ## BASH Setup
 
@@ -186,6 +186,8 @@ $ Rscript analyze.R           # run an R script
 ```
 
 # Any questions about BASH commands? 
+
+# Git/GitHub basics
 
 ## Git / GitHub
 
@@ -316,8 +318,6 @@ $ git status
 * Common use: feature development, bug fixes, experiments
 :::
 
----
-
 ## Git Branch Basics
 
 ::: {.fragment}
@@ -340,6 +340,8 @@ $ git checkout main
 :::
 
 # Any questions about using Git/GitHub? 
+
+# HPC basics
 
 ## What is an HPC?
 
