@@ -4,7 +4,7 @@ format: revealjs
 ---
 
 ### What is computational neuroscience? 
-![adapted from: https://compneuro.neuromatch.io/tutorials/intro.html](./images/ConceptMap.png)
+![adapted from: <https://compneuro.neuromatch.io/tutorials/intro.html>](./images/ConceptMap.png)
 
 ## 
 | generally, the goal of neuroscience is to understand the nervous system...
@@ -64,13 +64,15 @@ any questions before we get started?
 
 > 1. BASH basics
 > 2. Git/GitHub basics
+> 3. HPC basics
 
 ## Some coding tools
 
 1. BASH basics
 2. Git/GitHub basics
+3. HPC basics
 
-By the end of this, you'll hopefully know how to navigate data folders and publish your first repo.
+By the end of this, you'll hopefully know more about navigating data folders, publishing repositories, and utilizing UCSF's computational resources.
 
 
 ---
@@ -192,6 +194,40 @@ $ Rscript analyze.R           # run an R script
 * **GitHub** = place to host & collaborate (issues, PRs, CI).
 * Track changes, roll back, and work together without chaos.
 
+## Why use Git?
+
+* Make code reproducible
+* Easier collaboration across labs
+* Helpful for organizing analyses
+* It's the standard for storing and sharing code
+
+## Why use Git?
+
+* **Make code reproducible**
+* Easier collaboration across labs
+* Helpful for organizing analyses
+* It's the standard for storing and sharing code
+
+## Why use Git?
+
+* **Make code reproducible**
+* **Easier collaboration across labs**
+* Helpful for organizing analyses
+* It's the standard for storing and sharing code
+
+## Why use Git?
+
+* **Make code reproducible**
+* **Easier collaboration across labs**
+* **Helpful for organizing analyses**
+* It's the standard for storing and sharing code
+
+## Why use Git?
+
+* **Make code reproducible**
+* **Easier collaboration across labs**
+* **Helpful for organizing analyses**
+* **It's the standard for storing and sharing code**
 
 ## Check if you have Git
 |
@@ -204,7 +240,7 @@ $ git --version
 
 ::: {.fragment}
 | 
-| If you don't see git, follow instructions here: https://docs.github.com/en/get-started/git-basics/set-up-git 
+| If you don't see git, follow instructions here: <https://docs.github.com/en/get-started/git-basics/set-up-git> 
 ::: 
 
 ## Follow these steps to setup Git
