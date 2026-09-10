@@ -138,7 +138,7 @@ $ cd ../../Users/naomidonovan/Desktop
 | 
 
 ```bash
-$ cd Desktop/Abbasi\ Lab/   # move into Abbasi Lab folder 
+$ cd Desktop/Corces\ Lab/   # move into Corces Lab folder 
 $ ls                        # list the contents of the folder
 $ ls -l                     # list (long) the contents of the folder
 ```
